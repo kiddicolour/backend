@@ -1,0 +1,3 @@
+[submodule "plugins/import-content"]
+	path = plugins/import-content
+	url = git@github.com:kiddicolour/strapi-plugin-import-content
