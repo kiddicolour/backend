@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_seo_seos",
+  "info": {
+    "name": "SEO",
+    "icon": "search",
+    "description": "SEO data"
+  },
+  "options": {},
+  "attributes": {
+    "shareImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.share-image"
+    },
+    "meta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.meta"
+    }
+  }
+}
