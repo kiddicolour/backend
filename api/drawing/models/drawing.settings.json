@@ -45,7 +45,7 @@
     "externalId": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "string"
@@ -72,7 +72,7 @@
       "plugin": "upload",
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       }
     },

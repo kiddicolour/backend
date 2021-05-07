@@ -8,7 +8,7 @@
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true,
+    "draftAndPublish": false,
     "populateCreatorFields": false
   },
   "pluginOptions": {
@@ -46,7 +46,7 @@
     "externalId": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "string"
@@ -54,7 +54,7 @@
     "iconClass": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "string"
@@ -70,7 +70,7 @@
     "menuAudio": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "string"
