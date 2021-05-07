@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/themes": {
+    "/downloads": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Theme"
+                    "$ref": "#/components/schemas/Download"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Theme"
+          "Download"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Theme"
+                  "$ref": "#/components/schemas/Download"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Theme"
+          "Download"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewTheme"
+                "$ref": "#/components/schemas/NewDownload"
               }
             }
           }
         }
       }
     },
-    "/themes/count": {
+    "/downloads/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Theme"
+          "Download"
         ],
         "parameters": []
       }
     },
-    "/themes/{id}": {
+    "/downloads/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Theme"
+                  "$ref": "#/components/schemas/Download"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Theme"
+          "Download"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Theme"
+                  "$ref": "#/components/schemas/Download"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Theme"
+          "Download"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewTheme"
+                "$ref": "#/components/schemas/NewDownload"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Theme"
+          "Download"
         ],
         "parameters": [
           {
@@ -514,16 +514,15 @@
   },
   "components": {
     "schemas": {
-      "Theme": {
+      "Download": {
         "required": [
-          "id",
-          "name"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "title": {
             "type": "string"
           },
           "slug": {
@@ -535,19 +534,15 @@
           "externalId": {
             "type": "string"
           },
-          "iconClass": {
-            "type": "string"
-          },
-          "menuOrder": {
-            "type": "integer"
-          },
-          "menuAudio": {
-            "type": "string"
-          },
-          "parent": {
+          "file": {
             "required": [
               "id",
-              "name"
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
             ],
             "properties": {
               "id": {
@@ -556,46 +551,46 @@
               "name": {
                 "type": "string"
               },
-              "slug": {
-                "type": "uid"
-              },
-              "description": {
+              "alternativeText": {
                 "type": "string"
               },
-              "externalId": {
+              "caption": {
                 "type": "string"
               },
-              "iconClass": {
-                "type": "string"
-              },
-              "menuOrder": {
+              "width": {
                 "type": "integer"
               },
-              "menuAudio": {
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
                 "type": "string"
               },
-              "parent": {
+              "ext": {
                 "type": "string"
               },
-              "children": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "mime": {
+                "type": "string"
               },
-              "drawings": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "size": {
+                "type": "number"
               },
-              "localizations": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "url": {
+                "type": "string"
               },
-              "locale": {
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
                 "type": "string"
               },
               "created_by": {
@@ -606,72 +601,74 @@
               }
             }
           },
-          "children": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "slug": {
-                  "type": "uid"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "externalId": {
-                  "type": "string"
-                },
-                "iconClass": {
-                  "type": "string"
-                },
-                "menuOrder": {
-                  "type": "integer"
-                },
-                "menuAudio": {
-                  "type": "string"
-                },
-                "parent": {
-                  "type": "string"
-                },
-                "children": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "drawings": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "localizations": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "locale": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
+          "preview": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
-          "drawings": {
+          "localizations": {
             "type": "array",
             "items": {
               "required": [
@@ -693,38 +690,11 @@
                 "externalId": {
                   "type": "string"
                 },
-                "image": {
+                "file": {
                   "type": "string"
                 },
-                "imageLocalized": {
+                "preview": {
                   "type": "string"
-                },
-                "thumbnail": {
-                  "type": "string"
-                },
-                "ages": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "themes": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "types": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "tags": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
                 },
                 "localizations": {
                   "type": "array",
@@ -747,82 +717,112 @@
               }
             }
           },
-          "localizations": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "slug": {
-                  "type": "uid"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "externalId": {
-                  "type": "string"
-                },
-                "iconClass": {
-                  "type": "string"
-                },
-                "menuOrder": {
-                  "type": "integer"
-                },
-                "menuAudio": {
-                  "type": "string"
-                },
-                "parent": {
-                  "type": "string"
-                },
-                "children": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "drawings": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "localizations": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "locale": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+          "locale": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "required": [
+              "id",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "firstname": {
+                "type": "string"
+              },
+              "lastname": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "registrationToken": {
+                "type": "string"
+              },
+              "isActive": {
+                "type": "boolean"
+              },
+              "roles": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "preferedLanguage": {
+                "type": "string"
               }
             }
           },
-          "locale": {
-            "type": "string"
+          "updated_by": {
+            "required": [
+              "id",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "firstname": {
+                "type": "string"
+              },
+              "lastname": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "registrationToken": {
+                "type": "string"
+              },
+              "isActive": {
+                "type": "boolean"
+              },
+              "roles": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "preferedLanguage": {
+                "type": "string"
+              }
+            }
           }
         }
       },
-      "NewTheme": {
-        "required": [
-          "name"
-        ],
+      "NewDownload": {
         "properties": {
-          "name": {
+          "title": {
             "type": "string"
           },
           "slug": {
@@ -834,30 +834,6 @@
           "externalId": {
             "type": "string"
           },
-          "iconClass": {
-            "type": "string"
-          },
-          "menuOrder": {
-            "type": "integer"
-          },
-          "menuAudio": {
-            "type": "string"
-          },
-          "parent": {
-            "type": "string"
-          },
-          "children": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "drawings": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
           "localizations": {
             "type": "array",
             "items": {
@@ -866,6 +842,10 @@
           },
           "locale": {
             "type": "string"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           },
           "created_by": {
             "type": "string"
@@ -879,7 +859,7 @@
   },
   "tags": [
     {
-      "name": "Theme"
+      "name": "Download"
     }
   ]
 }
