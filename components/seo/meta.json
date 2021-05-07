@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_seo_metas",
+  "info": {
+    "name": "meta",
+    "icon": "globe",
+    "description": "Meta information for SEO"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 150
+    },
+    "robots": {
+      "type": "string"
+    },
+    "keywords": {
+      "type": "component",
+      "repeatable": true,
+      "component": "seo.keywords"
+    }
+  }
+}

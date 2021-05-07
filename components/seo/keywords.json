@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_seo_keywords",
+  "info": {
+    "name": "keywords",
+    "icon": "globe-africa",
+    "description": "SEO keyword"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

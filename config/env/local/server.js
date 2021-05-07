@@ -4,7 +4,7 @@ module.exports = ({ env }) => ({
     // 
     // See https://strapi.io/documentation/v3.x/getting-started/deployment.html#application-configuration
     host: env('HOST', '0.0.0.0'),
-    port: env.int('PORT', 8000),
+    port: env.int('PORT', 8100),
 
     // Admin user JWT configuration.
     // 
