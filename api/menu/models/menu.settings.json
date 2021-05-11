@@ -1,15 +1,14 @@
 {
   "kind": "collectionType",
-  "collectionName": "ages",
+  "collectionName": "menus",
   "info": {
-    "name": "Age",
+    "name": "Menu",
     "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true,
-    "draftAndPublish": false,
-    "populateCreatorFields": false
+    "timestamps": false,
+    "draftAndPublish": false
   },
   "pluginOptions": {
     "i18n": {
@@ -17,7 +16,7 @@
     }
   },
   "attributes": {
-    "name": {
+    "label": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -25,24 +24,15 @@
       },
       "type": "string"
     },
-    "slug": {
+    "url": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "uid",
-      "targetField": "name"
+      "type": "string"
     },
-    "description": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "richtext"
-    },
-    "externalId": {
+    "icon": {
       "pluginOptions": {
         "i18n": {
           "localized": false
@@ -50,23 +40,15 @@
       },
       "type": "string"
     },
-    "iconClass": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "string"
-    },
-    "menuOrder": {
+    "order": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "integer"
+      "type": "string"
     },
-    "menuAudio": {
+    "audio": {
       "pluginOptions": {
         "i18n": {
           "localized": false
@@ -74,9 +56,22 @@
       },
       "type": "string"
     },
-    "drawings": {
-      "via": "ages",
-      "collection": "drawing"
+    "parent": {
+      "model": "menu",
+      "via": "children"
+    },
+    "children": {
+      "collection": "menu",
+      "via": "parent"
+    },
+    "age": {
+      "model": "age"
+    },
+    "theme": {
+      "model": "theme"
+    },
+    "type": {
+      "model": "type"
     }
   }
 }
