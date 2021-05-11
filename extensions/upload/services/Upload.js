@@ -20,7 +20,7 @@ const {
 
 const { MEDIA_UPDATE, MEDIA_CREATE, MEDIA_DELETE } = webhookUtils.webhookEvents;
 
-const { bytesToKbytes } = require('../utils/file');
+const { bytesToKbytes } = require('strapi-plugin-upload/utils/file');
 
 const { UPDATED_BY_ATTRIBUTE, CREATED_BY_ATTRIBUTE } = contentTypesUtils.constants;
 
