@@ -525,6 +525,9 @@
           "label": {
             "type": "string"
           },
+          "title": {
+            "type": "string"
+          },
           "url": {
             "type": "string"
           },
@@ -546,6 +549,9 @@
                 "type": "string"
               },
               "label": {
+                "type": "string"
+              },
+              "title": {
                 "type": "string"
               },
               "url": {
@@ -606,6 +612,9 @@
                   "type": "string"
                 },
                 "label": {
+                  "type": "string"
+                },
+                "title": {
                   "type": "string"
                 },
                 "url": {
@@ -845,6 +854,9 @@
                 "label": {
                   "type": "string"
                 },
+                "title": {
+                  "type": "string"
+                },
                 "url": {
                   "type": "string"
                 },
@@ -901,6 +913,9 @@
       "NewMenu": {
         "properties": {
           "label": {
+            "type": "string"
+          },
+          "title": {
             "type": "string"
           },
           "url": {
