@@ -1,0 +1,3 @@
+[submodule "plugins/import-content"]
+	path = plugins/import-content
+	url = https://github.com/4levels/strapi-plugin-import-content-i18n.git
