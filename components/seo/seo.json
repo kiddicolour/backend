@@ -16,6 +16,11 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.meta"
+    },
+    "languages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "i18n.languages"
     }
   }
 }

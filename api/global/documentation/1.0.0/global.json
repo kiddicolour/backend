@@ -455,6 +455,40 @@
                     }
                   }
                 }
+              },
+              "languages": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string",
+                      "enum": [
+                        "nl",
+                        "en",
+                        "fr",
+                        "de",
+                        "es",
+                        "sv",
+                        "pl",
+                        "ru"
+                      ]
+                    },
+                    "default": {
+                      "type": "boolean",
+                      "default": false
+                    }
+                  }
+                }
               }
             }
           },
@@ -639,6 +673,40 @@
                           "type": "string"
                         }
                       }
+                    }
+                  }
+                }
+              },
+              "languages": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string",
+                      "enum": [
+                        "nl",
+                        "en",
+                        "fr",
+                        "de",
+                        "es",
+                        "sv",
+                        "pl",
+                        "ru"
+                      ]
+                    },
+                    "default": {
+                      "type": "boolean",
+                      "default": false
                     }
                   }
                 }
